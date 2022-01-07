@@ -14,7 +14,6 @@ public class Main {
 
     public static void main(String[] args) throws Exception{
 	// write your code here
-        //System.out.println("Testing..");
         orderService = new OrderServiceImpl();
 
         Restaurant restaurant = new Restaurant();
@@ -29,11 +28,8 @@ public class Main {
         restaurant.addToItemTimeMap("M",29);
         restaurant.addToItemTimeMap("A",17);
 
-
-        List<QueuedOrder> queuedOrderList = InputParser.parseOrdersFromFile("/home/vipin/Desktop/input.txt");
+        List<QueuedOrder> queuedOrderList = InputParser.parseOrdersFromFile("/home/vipin/Documents/Weekday_Assignment_Food_Delivery/Problem_1_Food_Delivery_Estimate/input.txt");
         for(QueuedOrder queuedOrder:queuedOrderList) {
-            //System.out.println(queuedOrder);
-            //System.out.println("Estimating delivery time");
             orderService.estimateDeliveryTime(queuedOrder,restaurant);
         }
     }
